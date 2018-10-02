@@ -14,8 +14,9 @@ def main():
     hot_python = subreddit.hot(limit = 5)
 
     for submission in hot_python:
-        print(submission.title)
-        print()
+        if not submission.stickied:
+            print(submission.title)
+            print()
 
 if __name__ == '__main__':
     main()
